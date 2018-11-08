@@ -14,6 +14,7 @@ import { RECAPTCHA_LANGUAGE } from 'ng-recaptcha';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './componentes/login/login.component';
 import { RegistroComponent } from './componentes/registro/registro.component';
+import { AppRoutingModule } from './app-routing.module';
 
 
 
@@ -30,6 +31,7 @@ import { RegistroComponent } from './componentes/registro/registro.component';
     ReactiveFormsModule,
     RecaptchaModule.forRoot(),
     RecaptchaFormsModule,
+    AppRoutingModule,
   ],
   providers: [
     // {
