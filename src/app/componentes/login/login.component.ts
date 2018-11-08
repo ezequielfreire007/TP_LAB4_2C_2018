@@ -1,7 +1,7 @@
 import { Component, OnInit, VERSION } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
-
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -24,13 +24,23 @@ export class LoginComponent implements OnInit {
       recaptchaReactive: new FormControl(null, Validators.required)
   });
 
-  constructor() { }
+  constructor(private rotuer: Router) { }
 
   ngOnInit() {
   }
 
   resolved(captchaResponse: string) {
     console.log(`Resolved captcha with response ${captchaResponse}:`);
+  }
+
+  entrar() {
+    console.log('voy a pagina principal');
+    this.rotuer.navigate(['/login']);
+  }
+
+  registro() {
+    console.log('voy a la pagina de registro');
+    this.rotuer.navigate(['/registro']);
   }
 
 }

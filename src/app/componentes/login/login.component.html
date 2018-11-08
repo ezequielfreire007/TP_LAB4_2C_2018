@@ -18,8 +18,8 @@
           </div>
           <form [formGroup]="reactiveForm" class="mt-2 justify-content-md-center">
             <re-captcha (resolved)="resolved($event)" siteKey="6LcrYnkUAAAAANiwWwH6CyaermRPAeld9EkhPFKy" formControlName="recaptchaReactive"></re-captcha>
-            <button class="btn btn-primary btn-block mt-3 g-recaptcha" data-sitekey="6LcrYnkUAAAAANiwWwH6CyaermRPAeld9EkhPFKy"  [disabled]="reactiveForm.invalid">Entrar</button>
-            <a href="" class="btn btn-secondary btn-block mb-3">Registrate</a>
+            <button class="btn btn-primary btn-block mt-3 g-recaptcha" (click)="entrar()" data-sitekey="6LcrYnkUAAAAANiwWwH6CyaermRPAeld9EkhPFKy"  [disabled]="reactiveForm.invalid">Entrar</button>
+            <button class="btn btn-secondary btn-block mb-3" (click)="registro()">Registrate</button>
           </form>
       </div>
     </div>
