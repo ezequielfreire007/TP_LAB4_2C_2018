@@ -16,8 +16,11 @@
             </div>
             <input type="password" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg">
           </div>
-          <a href=""  class="btn btn-primary btn-block mt-3">Entrar</a>
-          <a href=""  class="btn btn-secondary btn-block mb-3">Registrate</a>
+          <form [formGroup]="reactiveForm" class="mt-2 justify-content-md-center">
+            <re-captcha (resolved)="resolved($event)" siteKey="6LcrYnkUAAAAANiwWwH6CyaermRPAeld9EkhPFKy" formControlName="recaptchaReactive"></re-captcha>
+            <button class="btn btn-primary btn-block mt-3 g-recaptcha" data-sitekey="6LcrYnkUAAAAANiwWwH6CyaermRPAeld9EkhPFKy"  [disabled]="reactiveForm.invalid">Entrar</button>
+            <a href="" class="btn btn-secondary btn-block mb-3">Registrate</a>
+          </form>
       </div>
     </div>
   </div>
