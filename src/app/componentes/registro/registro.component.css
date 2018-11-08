@@ -25,9 +25,10 @@
 
 .fondo-registro {
   width: 100%;
+  /* max-width: 425px; */
   height: 100%;
   margin: 0 auto;
-  position: relative;
+  position: absolute;
   background-size: cover;
   background-color: rgba(95, 11, 11, 0.918);
   /* background: transparent url(../../../assets/img/login/login-cairo.jpg);

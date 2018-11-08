@@ -73,9 +73,9 @@
             </form>
           <!-- recaptcha y boton de registro -->
           <form [formGroup]="reactiveForm" class="mt-2 justify-content-md-center">
-            <re-captcha (resolved)="resolved($event)" siteKey="6LcrYnkUAAAAANiwWwH6CyaermRPAeld9EkhPFKy" formControlName="recaptchaReactive"></re-captcha>
-            <button class="btn btn-primary btn-block mt-3 g-recaptcha" data-sitekey="6LcrYnkUAAAAANiwWwH6CyaermRPAeld9EkhPFKy"  [disabled]="reactiveForm.invalid">Entrar</button>
-            <a href="" class="btn btn-secondary btn-block mb-3">Hacete amigo</a>
+            <re-captcha class="" (resolved)="resolved($event)" siteKey="6LcrYnkUAAAAANiwWwH6CyaermRPAeld9EkhPFKy" formControlName="recaptchaReactive"></re-captcha>
+            <button class="btn btn-primary btn-block mt-3 g-recaptcha" data-sitekey="6LcrYnkUAAAAANiwWwH6CyaermRPAeld9EkhPFKy"  [disabled]="reactiveForm.invalid">Hacete amigo</button>
+            <!-- <a href="" class="btn btn-secondary btn-block mb-3">Hacete amigo</a> -->
           </form>
         </div>
       </div>
