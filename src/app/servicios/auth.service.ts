@@ -9,6 +9,8 @@ import { Empleado } from '../modelo/empleado';
 })
 export class AuthService extends GenericoService {
 
+  redirectUrl: string;
+
   constructor(protected http: HttpClient, private _router: Router) {
     super(http);
   }
