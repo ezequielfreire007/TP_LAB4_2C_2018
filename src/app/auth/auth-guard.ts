@@ -4,8 +4,6 @@ import { AuthService } from '../servicios/auth.service';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { Observable } from 'rxjs';
 
-
-
 export class AuthGuard implements CanActivate {
 
   constructor(private _authService: AuthService,
@@ -24,7 +22,7 @@ export class AuthGuard implements CanActivate {
   checkLogin(url: string, roles: Array<string>): boolean {
     const token = localStorage.getItem('token');
     const tokenData = this._jwt.decodeToken(token);
-    const check: boolean = false;
+    let check = false;
 
     if (tokenData) {
       const tipoUsuario = tokenData['tipo'];
