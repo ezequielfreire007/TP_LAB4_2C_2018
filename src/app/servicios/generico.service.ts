@@ -7,9 +7,9 @@ import { HttpClient } from '@angular/common/http';
 })
 export class GenericoService {
 
-  url = '';
+  url = 'http://localhost:8080/API_Comanda/';
 
-  constructor(private http: HttpClient) { }
+  constructor(protected http: HttpClient) { }
 
   protected get<T>(api: string) {
     return this.http.get<T>(this.url + api).toPromise();

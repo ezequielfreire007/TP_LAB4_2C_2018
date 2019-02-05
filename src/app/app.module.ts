@@ -9,26 +9,26 @@ import { RecaptchaModule, RECAPTCHA_SETTINGS, RecaptchaSettings } from 'ng-recap
 import { RecaptchaFormsModule } from 'ng-recaptcha/forms';
 import { RECAPTCHA_LANGUAGE } from 'ng-recaptcha';
 
-
 // Componentes a rutear
 import { AppComponent } from './app.component';
 import { LoginComponent } from './componentes/login/login.component';
 import { RegistroComponent } from './componentes/registro/registro.component';
 import { AppRoutingModule } from './app-routing.module';
-
-
+import { HomeComponent } from './componentes/home/home.component';
+import { MenuComponent } from './componentes/menu/menu.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    RegistroComponent
+    RegistroComponent,
+    HomeComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
     FormsModule,
-    ReactiveFormsModule,
     RecaptchaModule.forRoot(),
     RecaptchaFormsModule,
     AppRoutingModule,
