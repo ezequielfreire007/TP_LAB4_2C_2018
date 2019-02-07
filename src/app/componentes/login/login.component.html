@@ -2,23 +2,41 @@
 <div class="container-fluid fondo-login">
   <div class="row justify-content-md-center">
     <div class="col-12 col-lg-offset-4 col-lg-4  mb-5 mt-5 ">
-      <div class="container cuadro">
+      <div class="container cuadro " [ngClass]="{'border-danger': error}">
           <img src="../../../assets/img/login/logo-cairo.jpg" class="" alt="">
-          <div class="input-group input-group-lg">
-            <div class="input-group-prepend">
-              <span class="input-group-text" id="inputGroup-sizing-lg">Email</span>
+          <form [formGroup]="form" (keyup.enter)="Submit()">
+            <div class="input-group input-group-lg">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-lg">usuario</span>
+              </div>
+              <input type="text" id="user" formControlName="user" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" [ngClass]="{ 'is-invalid': form.controls['user'].touched && form.controls['user'].invalid }">
+                <div *ngIf="form.controls['user'].touched && form.controls['user'].invalid" class="invalid-feedback">
+                  <div *ngIf="form.controls['user'].errors.required">Debe ingresar un usuario.</div>
+                </div>
+              <!-- <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg"> -->
             </div>
-            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg">
-          </div>
-          <div class="input-group input-group-lg">
-            <div class="input-group-prepend">
-              <span class="input-group-text" id="inputGroup-sizing-lg">Password</span>
+            <div class="input-group input-group-lg">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-lg">clave</span>
+              </div>
+              <input type="password" id="pass" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" formControlName="pass" [ngClass]="{ 'is-invalid': form.controls['pass'].touched && form.controls['pass'].invalid }">
+              <div *ngIf="form.controls['pass'].touched && form.controls['pass'].invalid" class="invalid-feedback">
+                <div *ngIf="form.controls['pass'].errors.required">Debe ingresar la contraseña.</div>
+              </div>
+              <!-- <input type="password" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg"> -->
             </div>
-            <input type="password" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg">
+          </form>
+          <div class="input-group input-group-lg">
+            <!-- <span><b class="ar">Acceso Rápido:</b></span> -->
+            <button type="button" class="btn btn-info btn-sm buttonDefault" data-toggle="tooltip" data-placement="top" title="Socio" (click)="cargarDefault('S')"><i class="far fa-handshake"></i></button>
+            <button type="button" class="btn btn-success btn-sm buttonDefault" data-toggle="tooltip" data-placement="top" title="Bartender" (click)="cargarDefault('B')"><i class="fas fa-cocktail"></i></button>
+            <button type="button" class="btn btn-warning btn-sm buttonDefault" data-toggle="tooltip" data-placement="top" title="Cervecero" (click)="cargarDefault('CE')"><i class="fas fa-beer"></i></button>
+            <button type="button" class="btn btn-danger btn-sm buttonDefault" data-toggle="tooltip" data-placement="top" title="Cocinero" (click)="cargarDefault('CO')"><i class="fas fa-utensils"></i></button>
+            <button type="button" class="btn btn-primary btn-sm buttonDefault" data-toggle="tooltip" data-placement="top" title="Mozo" (click)="cargarDefault('M')"><i class="fas fa-user-tie"></i></button>
           </div>
           <form [formGroup]="reactiveForm" class="mt-2 justify-content-md-center">
             <re-captcha (resolved)="resolved($event)" siteKey="6LcrYnkUAAAAANiwWwH6CyaermRPAeld9EkhPFKy" formControlName="recaptchaReactive"></re-captcha>
-            <button class="btn btn-primary btn-block mt-3 g-recaptcha" (click)="entrar()" data-sitekey="6LcrYnkUAAAAANiwWwH6CyaermRPAeld9EkhPFKy"  [disabled]="reactiveForm.invalid">Entrar</button>
+            <button class="btn btn-primary btn-block mt-3 g-recaptcha" type="submit" (click)="Submit()"data-sitekey="6LcrYnkUAAAAANiwWwH6CyaermRPAeld9EkhPFKy"  [disabled]="reactiveForm.invalid">Entrar</button>
             <button class="btn btn-secondary btn-block mb-3" (click)="registro()">Registrate</button>
           </form>
       </div>

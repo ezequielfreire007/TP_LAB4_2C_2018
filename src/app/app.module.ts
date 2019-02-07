@@ -16,6 +16,9 @@ import { RegistroComponent } from './componentes/registro/registro.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './componentes/home/home.component';
 import { MenuComponent } from './componentes/menu/menu.component';
+import { HttpClientModule } from '@angular/common/http';
+import { HttpModule } from '@angular/http';
+
 
 @NgModule({
   declarations: [
@@ -32,6 +35,8 @@ import { MenuComponent } from './componentes/menu/menu.component';
     RecaptchaModule.forRoot(),
     RecaptchaFormsModule,
     AppRoutingModule,
+    HttpClientModule,
+    HttpModule
   ],
   providers: [
     // {

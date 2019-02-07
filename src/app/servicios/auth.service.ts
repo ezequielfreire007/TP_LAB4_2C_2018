@@ -3,6 +3,7 @@ import { GenericoService } from './generico.service';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { Empleado } from '../modelo/empleado';
+import { Login } from '../modelo/login';
 
 @Injectable({
   providedIn: 'root'
@@ -16,8 +17,8 @@ export class AuthService extends GenericoService {
   }
 
   // Login del empleado
-  public loginEmpleado(empleado: Empleado): any {
-    return super.post<Object>('empleados/login', empleado); // retorna el token del usuario
+  public loginEmpleado(login: Login): any {
+    return super.post<Object>('empleados/login', login); // retorna el token del usuario
   }
 
   // Logout del empleado
