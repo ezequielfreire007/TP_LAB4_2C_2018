@@ -1,0 +1,23 @@
+* 844c3a3 inicio despues de recuperacion
+* 44b58d7 se agrega logica en login
+* 5521ec6 login-recaptcha
+* 616fd04 retoques en auth-guard
+* bab33d8 se completa auth/guard
+* d67c9fa se genera Guard para rutas y roles
+* f2f401e se importa el modulo de app-routing
+* e3a61ed mod estilo en registro
+* dcf5fd1 se agrega router outlet
+* 9ba2cce servicio generico
+* 363d8a7 se agrega rutetLink a los botones
+* 44d74c6 se agrega modulo de rutas
+* 2d29671 se agrega link de recaptcha utilizado
+* fed4bef se agrega imagen para registro
+* 930c420 se importan modulos para utilizar recaptcha
+* a5ff70b se importa fuente pacifico
+* 77a66e3 se maqueta la vista de registro y se agraga recaptcha
+* 60b6a36 se incorpora recaptcha al login
+* 5d1fffc se instala recaptcha de google
+* 6dd1203 se instalala el ngx-captcha
+* 498d5e8 se agrega estilo a login
+* 2601229 vista login primera parte
+* e6f45d9 initial commit
