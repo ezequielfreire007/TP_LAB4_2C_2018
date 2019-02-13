@@ -31,3 +31,6 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 ## Instalacion de componentes necesarios para el TP
 ## Recaptcha tutorial
 https://github.com/DethAriel/ng-recaptcha#installation
+
+## Spinner uso
+https://www.npmjs.com/package/ngx-spinner

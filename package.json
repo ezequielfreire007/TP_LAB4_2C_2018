@@ -28,6 +28,7 @@
     "jquery": "^1.9.1",
     "ng-recaptcha": "^4.2.1",
     "ngx-captcha": "^6.0.0",
+    "ngx-spinner": "^7.0.0",
     "popper.js": "^1.14.4",
     "rxjs": "~6.2.0",
     "zone.js": "~0.8.26"
