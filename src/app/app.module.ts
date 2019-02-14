@@ -24,6 +24,7 @@ import { GenericoService } from './servicios/generico.service';
 import { SpinnerInterceptor } from './servicios/interceptors/SpinnerInterceptor';
 import { ErrorInterceptor } from './servicios/interceptors/ErrorInterceptor';
 import { JwtInterceptor } from './servicios/interceptors/JWTInterceptro';
+import { PedidosTableroComponent } from './componentes/pedidos-tablero/pedidos-tablero.component';
 
 export function getAccessToken() {
   return localStorage.getItem('token');
@@ -37,7 +38,8 @@ export function getAccessToken() {
     RegistroComponent,
     HomeComponent,
     MenuComponent,
-    EmpleadosComponent
+    EmpleadosComponent,
+    PedidosTableroComponent
   ],
   imports: [
     BrowserModule,

@@ -42,7 +42,7 @@ export class LoginComponent implements OnInit {
     };
 
     if (this._auth.loggedIn()) {
-      console.log('usuario ya logeador direccionar a home');
+      console.log('usuario ya logeador direccionar a empleados');
       this._router.navigate(['/empleados']);
     }
   }
