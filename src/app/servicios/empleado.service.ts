@@ -6,14 +6,14 @@ import { Empleado } from '../modelo/empleado';
 @Injectable({
   providedIn: 'root'
 })
-export class EmpleadoService extends GenericoService {
+export class EmpleadoService {
 
-  constructor(protected http: HttpClient) {
-    super(http);
+  constructor(protected httpGeneric: GenericoService) {
+
   }
 
   public loginUser(empleado: Empleado) {
-    return super.post<any>('', empleado);
+    // return super.post<any>('', empleado);
   }
 
 }

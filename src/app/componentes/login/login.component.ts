@@ -17,6 +17,8 @@ export class LoginComponent implements OnInit {
   public form: FormGroup;
   public error: boolean;
   public errorMessage: string;
+  public login: Login;
+
   // signin = new FormGroup({
   //   email: new FormControl(null, Validators.required),
   //   password: new FormControl(null, Validators.required),
@@ -28,11 +30,21 @@ export class LoginComponent implements OnInit {
       recaptchaReactive: new FormControl(null, Validators.required)
   });
 
-  constructor(private _rotuer: Router, private _fb: FormBuilder, private _auth: AuthService ) {
+  constructor(private _router: Router, private _fb: FormBuilder, private _auth: AuthService ) {
     this.form = this._fb.group({
       user: ['', Validators.required],
       pass: ['', Validators.required]
     });
+
+    this.login = {
+      user: '',
+      pass: ''
+    };
+
+    if (this._auth.loggedIn()) {
+      console.log('usuario ya logeador direccionar a home');
+      this._router.navigate(['/empleados']);
+    }
   }
 
   ngOnInit() {
@@ -44,12 +56,12 @@ export class LoginComponent implements OnInit {
 
   entrar() {
     console.log('voy a pagina principal');
-    this._rotuer.navigate(['/login']);
+    this._router.navigate(['/login']);
   }
 
   registro() {
     console.log('voy a la pagina de registro');
-    this._rotuer.navigate(['/registro']);
+    this._router.navigate(['/registro']);
   }
 
   cargarDefault(tipo: string) {
@@ -58,27 +70,27 @@ export class LoginComponent implements OnInit {
       case 'S':
         dataLogin = { 'user': 'admin', 'pass': 'admin'};
         this.form.setValue(dataLogin);
-        this.submit();
+        // this.submit();
         break;
       case 'B':
         dataLogin = { 'user': 'bartender', 'pass': 'bartender'};
         this.form.setValue(dataLogin);
-        this.submit();
+        // this.submit();
         break;
       case 'CE':
         dataLogin = { 'user': 'cervecero', 'pass': 'cervecero'};
         this.form.setValue(dataLogin);
-        this.submit();
+        // this.submit();
         break;
       case 'CO':
         dataLogin = { 'user': 'cocinero', 'pass': 'cocinero'};
         this.form.setValue(dataLogin);
-        this.submit();
+        // this.submit();
         break;
       case 'M':
         dataLogin = { 'user': 'mozo', 'pass': 'mozo'};
         this.form.setValue(dataLogin);
-        this.submit();
+        // this.submit();
         break;
     }
   }
@@ -87,19 +99,19 @@ export class LoginComponent implements OnInit {
     this.errorMessage = '';
     this.error = false;
     if (this.form.valid) {
-      const dataLogin: Login = { 'user' : `${this.form.get('user').value}`,
-        'pass': `${this.form.get('pass').value}`};
-        console.log(dataLogin);
-      this._auth.loginEmpleado(dataLogin)
+      // const dataLogin: Login = { 'user' : `${this.form.get('user').value}`,
+      //   'pass': `${this.form.get('pass').value}`};
+        console.log(this.login);
+      this._auth.loginEmpleado(this.login)
         .then(
           response => {
             console.log(response);
             if (response['Estado'] === 'OK') {
               localStorage.setItem('token', response['Token']);
               if (!this._auth.redirectUrl) {
-                this._auth.redirectUrl = '/Empleados';
+                this._auth.redirectUrl = 'empleados';
               }
-              this._rotuer.navigate([this._auth.redirectUrl]);
+              this._router.navigate([this._auth.redirectUrl]);
             } else {
               this.error = true;
               this.errorMessage = response['Mensaje'];

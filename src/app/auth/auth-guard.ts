@@ -4,6 +4,9 @@ import { AuthService } from '../servicios/auth.service';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { Observable } from 'rxjs';
 
+@Injectable({
+  providedIn: 'root'
+})
 export class AuthGuard implements CanActivate {
 
   constructor(private _authService: AuthService,
