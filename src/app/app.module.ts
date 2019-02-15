@@ -25,6 +25,7 @@ import { SpinnerInterceptor } from './servicios/interceptors/SpinnerInterceptor'
 import { ErrorInterceptor } from './servicios/interceptors/ErrorInterceptor';
 import { JwtInterceptor } from './servicios/interceptors/JWTInterceptro';
 import { PedidosTableroComponent } from './componentes/pedidos-tablero/pedidos-tablero.component';
+import { PedidosListaComponent } from './componentes/pedidos-lista/pedidos-lista.component';
 
 export function getAccessToken() {
   return localStorage.getItem('token');
@@ -39,7 +40,8 @@ export function getAccessToken() {
     HomeComponent,
     MenuComponent,
     EmpleadosComponent,
-    PedidosTableroComponent
+    PedidosTableroComponent,
+    PedidosListaComponent
   ],
   imports: [
     BrowserModule,
