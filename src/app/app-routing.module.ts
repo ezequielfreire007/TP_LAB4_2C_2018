@@ -18,7 +18,7 @@ const routes: Routes = [
   { path: 'empleados', component: EmpleadosComponent, canActivate: [AuthGuard],
                        data: { roles : ['Socio', 'Cocinero', 'Bartender', 'Cervecero', 'Mozo']},
                        children: [
-                         { path: 'pedidos', redirectTo: 'pedidos', pathMatch: 'full'},
+                         { path: '', redirectTo: 'pedidos', pathMatch: 'full'},
                          { path: 'pedidos', component: PedidosTableroComponent, canActivate: [AuthGuard],
                            data: { roles: ['Socio', 'Cocinero', 'Bartender', 'Cervecero', 'Mozo'] } }
                        ]},

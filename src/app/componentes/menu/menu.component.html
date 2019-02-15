@@ -1,18 +1,20 @@
-<nav class="navbar navbar-dark bg-dark navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-dark bg-dark navbar-expand-lg navbar-light bg-light letra">
+    <a class="navbar-brand" href="#">El Cairo</a>
+    <a class="navbar-brand" href="#">{{ usuario.nombre }}</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <h3  class="navbar-brand" *ngIf="usuarioActivo"(click)="">Hola {{ usuario.nombre }}</h3>
+  <h3  class="navbar-brand" ></h3>
   <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
       <li class="nav-item">
-        <a class="nav-link" [routerLinkActive]="active" [routerLink]="['/pedidos']" routerLinkActive="router-link-active" >Alta de Servidor <span class="sr-only">(current)</span></a>
+        <a class="nav-link" routerLinkActive="active" routerLink="pedidos">Pedidos <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" [routerLink]="['/empleados']" routerLinkActive="router-link-active"  >Mis Servidores<span class="sr-only">(current)</span></a>
+        <a class="nav-link" routerLink="empleados" routerLinkActive="active">Empleados<span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link"  [routerLink]="['/']" routerLinkActive="router-link-active" >Agregar Servidor <span class="sr-only">(current)</span></a>
+        <a class="nav-link"  routerLink="mesas" routerLinkActive="active">Mesas <span class="sr-only">(current)</span></a>
       </li>
     </ul>
     <form class="nav navbar-nav navbar-right">

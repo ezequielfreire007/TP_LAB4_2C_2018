@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/servicios/auth.service';
 import { Router } from '@angular/router';
+import { Usuario } from 'src/app/modelo/usuario';
+import { JwtHelperService } from '@auth0/angular-jwt';
 
 @Component({
   selector: 'app-menu',
@@ -9,11 +11,22 @@ import { Router } from '@angular/router';
 })
 export class MenuComponent implements OnInit {
 
-  constructor(private _auth: AuthService, private _router: Router) {
+  usuario: Usuario;
+
+
+  constructor(private _auth: AuthService, private _router: Router, private jwt: JwtHelperService) {
     // if (!this._auth.loggedIn()) {
     //   console.log('usuario no logueado logeador direccionar a login');
     //   this._router.navigate(['/login']);
     // }
+    const token = localStorage.getItem('token');
+    const tokenData = this.jwt.decodeToken(token);
+    this.usuario = {
+      usuario: tokenData['usuario'],
+      tipo: tokenData['tipo'],
+      id: tokenData['id'],
+      nombre: tokenData['nombre']
+    };
   }
 
   ngOnInit() {

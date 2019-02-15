@@ -2,3 +2,9 @@
 
 /* Fuentes */
 @import url('https://fonts.googleapis.com/css?family=Pacifico');
+
+@import url('https://fonts.googleapis.com/css?family=Lobster');
+
+.letra {
+  font-family: 'Lobster', cursive;
+}

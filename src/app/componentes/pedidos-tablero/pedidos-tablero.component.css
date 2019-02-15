@@ -1,0 +1,37 @@
+.fondo {
+  font-family: 'Lobster', cursive;
+  background-image: url("../../../assets/img/pedidos/fodo-mozo.jpg");
+}
+
+.titular{
+  font-family: 'Lobster', cursive;
+  text-align: center;
+  width: 100%
+}
+
+.boton-mozo {
+  border-radius: 15px;
+}
+
+h2 {
+  margin-left: 15px;
+  color: white;
+}
+
+/* Magins Global*/
+
+.mr15 {
+  margin-right: 15px;
+}
+
+.ml15 {
+  margin-left: 15px;
+}
+
+.mt15 {
+  margin-top: 15px;
+}
+
+.mb15 {
+  margin-bottom: 15px;
+}
