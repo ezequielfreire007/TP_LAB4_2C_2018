@@ -6,6 +6,7 @@
   background-color: rgba(255, 0, 0, 0.822);
   object-fit: cover;
   filter: grayscale(0%);
+  border-radius: 20px;
 }
 
 .cuadro .input-group {

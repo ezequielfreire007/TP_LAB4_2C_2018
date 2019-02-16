@@ -12,7 +12,7 @@ export class AuthService {
 
   redirectUrl: string;
 
-  constructor(protected httpGeneric: GenericoService, private _router: Router) {}
+  constructor(public httpGeneric: GenericoService, private _router: Router) {}
 
   // Login del empleado
   public loginEmpleado(login: Login) {
