@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Menu } from 'src/app/modelo/menu';
+import { MenuService } from 'src/app/servicios/menu.service';
 
 @Component({
   selector: 'app-menu-pedido',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuPedidoComponent implements OnInit {
 
+  @Input() listaMenu: Menu[];
+
   constructor() { }
 
   ngOnInit() {
   }
+
+
 
 }

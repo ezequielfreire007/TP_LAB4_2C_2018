@@ -1,3 +1,21 @@
-<p>
-  menu-pedido works!
-</p>
+<div class="card-deck ml15 mr15 mb15">
+  <div class="card" *ngFor="let menu of listaMenu">
+    <img src="../../../assets/img/pedidos/{{menu.foto}}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{menu.nombre}}</h5>
+      <p class="card-text">{{menu.descripcion}}</p>
+      <div class="form-group">
+        <label for="exampleFormControlSelect1">Cantidad</label>
+        <select class="form-control" id="exampleFormControlSelect1">
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+        </select>
+      </div>
+      <button type="button" class="btn btn-primary btn-lg boton-mozo">Tomar orden</button>
+      <p class="card-text"><small class="text-muted">Precio: {{menu.precio}}</small></p>
+    </div>
+  </div>
+</div>

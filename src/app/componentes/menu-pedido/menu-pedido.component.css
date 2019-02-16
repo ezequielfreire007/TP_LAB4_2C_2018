@@ -1,0 +1,26 @@
+.boton-mozo {
+  border-radius: 15px;
+}
+
+h2 {
+  margin-left: 15px;
+  color: white;
+}
+
+/* Magins Global*/
+
+.mr15 {
+  margin-right: 15px;
+}
+
+.ml15 {
+  margin-left: 15px;
+}
+
+.mt15 {
+  margin-top: 15px;
+}
+
+.mb15 {
+  margin-bottom: 15px;
+}
